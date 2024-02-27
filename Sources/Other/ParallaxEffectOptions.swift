@@ -55,6 +55,10 @@ extension ParallaxEffectOptions {
 
     public struct GlowPosition {
         let layout: (UIView, UIImageView) -> Void
+        
+        public init(layout: @escaping (UIView, UIImageView) -> Void) {
+            self.layout = layout
+        }
 
         public static let top: GlowPosition = .init(layout: { (glowEffectContainerView, glowImageView) in
             if let glowSuperView = glowEffectContainerView.superview {
